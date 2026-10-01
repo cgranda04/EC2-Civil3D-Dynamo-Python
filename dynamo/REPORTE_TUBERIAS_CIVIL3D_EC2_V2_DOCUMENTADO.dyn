@@ -1,0 +1,2481 @@
+{
+  "Uuid": "a208fdec-f876-4e8e-ae5f-de6a53798032",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "REPORTE_TUBERIAS_CIVIL3D_EC2_V2_DOCUMENTADO",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      },
+      "List": {
+        "Key": "List",
+        "Value": "BuiltIn.ds"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "136351ce4d50467da61fa63b0c76975e",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3f11b9755f40468d9be7c3bf507a33ca",
+          "Name": "name",
+          "Description": "Name of the pipe network\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6a5e6f0145984fb09b88afe8e1f5deb9",
+          "Name": "document",
+          "Description": "Document containing the pipe network. By default, the current document will be used.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39d97d0a025749d6a1c4e39c3722920a",
+          "Name": "PipeNetwork",
+          "Description": "Pipe network",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.PipeNetwork.GetPipeNetworkByName@string,Autodesk.AutoCAD.DynamoNodes.Document",
+      "Replication": "Auto",
+      "Description": "Returns the pipe network with the given name in a document\n\nPipeNetwork.GetPipeNetworkByName (name: string, document: Document = null): PipeNetwork"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f7bb3906ea594408aab8725b8fc248ea",
+      "NodeType": "FunctionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a9f7ac47daae45989f0d2df12257305a",
+          "Name": "Document",
+          "Description": "Current document",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.AutoCAD.DynamoNodes.Document.Current",
+      "Replication": "Auto",
+      "Description": "Returns the current document\n\nDocument.Current: Document"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "aa284ab6c3ad49d0be1b263b8e30f3b7",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fb398ab7f8524c00b1cf46e83ed70e49",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"RED 01\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5c3eed3b84b9433db7aeced60f85ee4d",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "6bac0642846e4aed9b7a481acd055d41",
+          "Name": "pipeNetwork",
+          "Description": "Autodesk.Civil.DynamoNodes.PipeNetwork",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6cbfa671cd6044cebadc9e920d5bfc97",
+          "Name": "Pipe[]",
+          "Description": "Pipes in pipe network",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.PipeNetwork.Pipes",
+      "Replication": "Auto",
+      "Description": "Returns all pipes in a pipe network\n\nPipeNetwork.Pipes: Pipe[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "9018ea4909d245ce88f341412ac48ddb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "3a986d63e4b8437386a880f0f460054a",
+          "Name": "civilObject",
+          "Description": "Autodesk.Civil.DynamoNodes.CivilObject",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "67b13e8734424ea8b30d8b472a7e2536",
+          "Name": "string",
+          "Description": "Name of civil object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.CivilObject.Name",
+      "Replication": "Auto",
+      "Description": "Returns the name of a civil object\n\nCivilObject.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "372f402a51a8443a9e7621e99da683ac",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1a3e72f03e66498d8088f92407358017",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"/\";"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "Code": "# -*- coding: utf-8 -*-\n\"\"\"\nEC2 - BIM Management\nRutina Dynamo + CPython3 para Civil 3D 2025\n\nOBJETIVO\n--------\nRecibir desde Dynamo la información de cada tubería de una Pipe Network,\ncalcular profundidades de excavación y consultar las estructuras (buzones)\nconectadas para obtener nombre, estilo de etiqueta y tipo de buzón.\n\nENTORNO VALIDADO\n----------------\n- Autodesk Civil 3D 2025.2.1\n- Dynamo 3.3.1.7726\n- Motor Python: CPython3\n\nENTRADAS DEL NODO PYTHON\n------------------------\nIN[0] = Nombre de la tubería\nIN[1] = Part Size / dimensión de la tubería\nIN[2] = Longitud 2D de la tubería\nIN[3] = Pendiente de la tubería\nIN[4] = Cota de terreno al inicio\nIN[5] = Cota de fondo de tubería al inicio\nIN[6] = Cota de terreno al final\nIN[7] = Cota de fondo de tubería al final\nIN[8] = Estructura / buzón conectado al inicio\nIN[9] = Estructura / buzón conectado al final\n\nSALIDA\n------\nOUT = Lista de filas. Cada fila contiene 19 campos, en este orden:\n\n01 Nombre de tubería\n02 Part Size\n03 Longitud 2D\n04 Pendiente\n05 Cota terreno inicio\n06 Cota fondo tubería inicio\n07 Excavación inicio\n08 Cota terreno final\n09 Cota fondo tubería final\n10 Excavación final\n11 Excavación promedio\n12 Buzón inicio\n13 Estilo de etiqueta inicio\n14 Tipo de buzón inicio\n15 Rango de altura inicio\n16 Buzón final\n17 Estilo de etiqueta final\n18 Tipo de buzón final\n19 Rango de altura final\n\nNOTA\n----\nEl tipo de buzón se infiere a partir de la nomenclatura del estilo de\netiqueta o del nombre de la estructura. Por ello, la rutina depende de que\nesa convención se mantenga en el modelo.\n\"\"\"\n\nimport re\nimport clr\n\n# ---------------------------------------------------------------------------\n# 1. CARGA DE API AUTOCAD / CIVIL 3D\n# ---------------------------------------------------------------------------\n\nclr.AddReference(\"AcMgd\")\nclr.AddReference(\"AcDbMgd\")\nclr.AddReference(\"AeccDbMgd\")\n\nfrom Autodesk.AutoCAD.ApplicationServices import Application\nfrom Autodesk.AutoCAD.DatabaseServices import OpenMode\nfrom Autodesk.Civil.DatabaseServices import StructureLabel\n\n\n# ---------------------------------------------------------------------------\n# 2. FUNCIONES AUXILIARES\n# ---------------------------------------------------------------------------\n\ndef to_list(value):\n    \"\"\"Convierte una entrada de Dynamo en una lista Python.\"\"\"\n    if value is None:\n        return []\n\n    if isinstance(value, (list, tuple)):\n        return list(value)\n\n    try:\n        if hasattr(value, \"__iter__\") and not isinstance(value, str):\n            return list(value)\n    except Exception:\n        pass\n\n    return [value]\n\n\ndef clean(value):\n    \"\"\"Reemplaza None por texto vacío para evitar celdas problemáticas.\"\"\"\n    return \"\" if value is None else value\n\n\ndef as_float(value):\n    \"\"\"Convierte un valor a float; devuelve None si no es numérico.\"\"\"\n    try:\n        return float(value)\n    except Exception:\n        return None\n\n\ndef difference(a, b):\n    \"\"\"Calcula a - b cuando ambos valores son numéricos.\"\"\"\n    aa = as_float(a)\n    bb = as_float(b)\n\n    if aa is None or bb is None:\n        return \"\"\n\n    return aa - bb\n\n\ndef average(a, b):\n    \"\"\"Calcula el promedio de dos valores numéricos.\"\"\"\n    aa = as_float(a)\n    bb = as_float(b)\n\n    if aa is None or bb is None:\n        return \"\"\n\n    return (aa + bb) / 2.0\n\n\ndef depth_range(depth):\n    \"\"\"\n    Clasifica la profundidad de excavación en rangos de 0.50 m.\n    \"\"\"\n    value = as_float(depth)\n\n    if value is None:\n        return \"SIN ALTURA\"\n\n    if value < 0:\n        return \"REVISAR COTA\"\n\n    if value < 1.50:\n        return \"0.00-1.50 m\"\n    if value < 2.00:\n        return \"1.50-2.00 m\"\n    if value < 2.50:\n        return \"2.00-2.50 m\"\n    if value < 3.00:\n        return \"2.50-3.00 m\"\n    if value < 3.50:\n        return \"3.00-3.50 m\"\n    if value < 4.00:\n        return \"3.50-4.00 m\"\n\n    return \">= 4.00 m\"\n\n\ndef parse_structure_type(text):\n    \"\"\"\n    Interpreta el tipo de buzón a partir de una convención de nomenclatura.\n\n    Reconoce, entre otros:\n    TIPO I ... TIPO VIII\n    TI ... TVIII\n    T1 ... T8\n    \"\"\"\n    text_upper = (text or \"\").upper()\n\n    roman_types = [\n        (\"VIII\", \"TIPO VIII\"),\n        (\"VII\", \"TIPO VII\"),\n        (\"VI\", \"TIPO VI\"),\n        (\"V\", \"TIPO V\"),\n        (\"IV\", \"TIPO IV\"),\n        (\"III\", \"TIPO III\"),\n        (\"II\", \"TIPO II\"),\n        (\"I\", \"TIPO I\"),\n    ]\n\n    # Caso explícito: \"TIPO III\", \"TIPOIII\", etc.\n    for roman, label in roman_types:\n        if (\"TIPO \" + roman) in text_upper or (\"TIPO\" + roman) in text_upper:\n            return label\n\n    # Caso abreviado: TIII, T3, etc.\n    tokens = re.split(r\"[^A-Z0-9]+\", text_upper.replace(\"-\", \"_\"))\n\n    abbreviations = [\n        (\"TVIII\", \"TIPO VIII\"), (\"T8\", \"TIPO VIII\"),\n        (\"TVII\", \"TIPO VII\"), (\"T7\", \"TIPO VII\"),\n        (\"TVI\", \"TIPO VI\"), (\"T6\", \"TIPO VI\"),\n        (\"TV\", \"TIPO V\"), (\"T5\", \"TIPO V\"),\n        (\"TIV\", \"TIPO IV\"), (\"T4\", \"TIPO IV\"),\n        (\"TIII\", \"TIPO III\"), (\"T3\", \"TIPO III\"),\n        (\"TII\", \"TIPO II\"), (\"T2\", \"TIPO II\"),\n        (\"TI\", \"TIPO I\"), (\"T1\", \"TIPO I\"),\n    ]\n\n    for token, label in abbreviations:\n        if token in tokens:\n            return label\n\n    return \"SIN TIPO EN ETIQUETA\"\n\n\ndef object_id_from_wrapper(obj):\n    \"\"\"\n    Obtiene el ObjectId nativo de AutoCAD/Civil 3D desde el wrapper de Dynamo.\n    \"\"\"\n    if obj is None:\n        return None\n\n    try:\n        return obj.InternalObjectId\n    except Exception:\n        pass\n\n    try:\n        return obj.InternalDBObject.ObjectId\n    except Exception:\n        return None\n\n\ndef structure_info(obj, transaction):\n    \"\"\"\n    Devuelve:\n        (nombre_estructura, estilo_etiqueta, tipo_buzon)\n\n    La función consulta el objeto nativo de Civil 3D y las etiquetas\n    disponibles asociadas a la estructura.\n    \"\"\"\n    if obj is None:\n        return (\"NO CONECTADO\", \"SIN ETIQUETA\", \"NO CONECTADO\")\n\n    object_id = object_id_from_wrapper(obj)\n\n    if object_id is None:\n        return (\"ID NO DISPONIBLE\", \"SIN ETIQUETA\", \"REVISAR ESTRUCTURA\")\n\n    structure_name = \"\"\n    style_names = []\n\n    # Nombre de la estructura\n    try:\n        db_object = transaction.GetObject(object_id, OpenMode.ForRead)\n        try:\n            structure_name = str(db_object.Name)\n        except Exception:\n            pass\n    except Exception:\n        try:\n            structure_name = str(obj.Name)\n        except Exception:\n            structure_name = \"\"\n\n    # Estilos de etiqueta asociados\n    try:\n        label_ids = StructureLabel.GetAvailableLabelIds(object_id)\n\n        for label_id in label_ids:\n            try:\n                label = transaction.GetObject(label_id, OpenMode.ForRead)\n                style_name = str(label.StyleName)\n\n                if style_name:\n                    style_names.append(style_name)\n\n            except Exception:\n                pass\n\n    except Exception:\n        pass\n\n    # Prioriza la etiqueta de planta usada para buzones\n    selected_style = \"\"\n\n    for style_name in style_names:\n        style_upper = style_name.upper()\n\n        if (\n            \"ETIQ_BUZONES_PLANTA\" in style_upper\n            or \"BUZONES_PLANTA\" in style_upper\n            or \"PLANTA\" in style_upper\n        ):\n            selected_style = style_name\n            break\n\n    # Si existe alguna etiqueta pero no coincide con la convención anterior,\n    # utiliza la primera disponible.\n    if not selected_style and style_names:\n        selected_style = style_names[0]\n\n    if not selected_style:\n        selected_style = \"SIN ETIQUETA\"\n\n    structure_type = parse_structure_type(\n        selected_style + \" \" + structure_name\n    )\n\n    return (\n        structure_name if structure_name else \"SIN NOMBRE\",\n        selected_style,\n        structure_type,\n    )\n\n\ndef normalize_input_lengths(input_lists):\n    \"\"\"\n    Valida las listas recibidas desde Dynamo.\n\n    Regla:\n    - Las listas principales deben tener la misma cantidad de elementos.\n    - Se permite una lista de un solo elemento como valor constante.\n    - Una lista vacía se completa con None.\n    - Una longitud intermedia inconsistente genera un error explícito.\n\n    Esto evita repetir silenciosamente el último elemento de una lista.\n    \"\"\"\n    max_count = max([len(values) for values in input_lists] + [0])\n\n    if max_count == 0:\n        raise ValueError(\n            \"El nodo Python no recibió elementos. \"\n            \"Revise la Pipe Network y las conexiones de entrada.\"\n        )\n\n    normalized = []\n\n    for index, values in enumerate(input_lists):\n        current_length = len(values)\n\n        if current_length == max_count:\n            normalized.append(values)\n\n        elif current_length == 1:\n            normalized.append(values * max_count)\n\n        elif current_length == 0:\n            normalized.append([None] * max_count)\n\n        else:\n            raise ValueError(\n                \"Longitud inconsistente en IN[{0}]: {1} elementos. \"\n                \"Se esperaban {2}, 1 o 0.\".format(\n                    index, current_length, max_count\n                )\n            )\n\n    return normalized, max_count\n\n\n# ---------------------------------------------------------------------------\n# 3. RECEPCIÓN Y VALIDACIÓN DE INPUTS DE DYNAMO\n# ---------------------------------------------------------------------------\n\nif len(IN) < 10:\n    raise ValueError(\n        \"El script requiere 10 entradas IN[0]...IN[9]. \"\n        \"Actualmente recibe {0}.\".format(len(IN))\n    )\n\ninput_lists = [to_list(value) for value in IN[:10]]\ninput_lists, pipe_count = normalize_input_lengths(input_lists)\n\n(\n    pipe_names,\n    part_sizes,\n    lengths_2d,\n    slopes,\n    start_terrain_elevations,\n    start_bottom_elevations,\n    end_terrain_elevations,\n    end_bottom_elevations,\n    start_structures,\n    end_structures,\n) = input_lists\n\n\n# ---------------------------------------------------------------------------\n# 4. PROCESAMIENTO DE CADA TUBERÍA\n# ---------------------------------------------------------------------------\n\nrows = []\n\nactive_document = Application.DocumentManager.MdiActiveDocument\n\nif active_document is None:\n    raise RuntimeError(\n        \"No existe un documento activo de Civil 3D.\"\n    )\n\ntransaction = active_document.Database.TransactionManager.StartTransaction()\n\ntry:\n    for index in range(pipe_count):\n\n        # ---------------------------\n        # Datos directos de la tubería\n        # ---------------------------\n        pipe_name = clean(pipe_names[index])\n        part_size = clean(part_sizes[index])\n        length_2d = clean(lengths_2d[index])\n        slope = clean(slopes[index])\n\n        # ---------------------------\n        # Cotas inicio / final\n        # ---------------------------\n        start_terrain = clean(start_terrain_elevations[index])\n        start_bottom = clean(start_bottom_elevations[index])\n\n        end_terrain = clean(end_terrain_elevations[index])\n        end_bottom = clean(end_bottom_elevations[index])\n\n        # Excavación = cota terreno - cota fondo exterior de tubería\n        start_excavation = difference(start_terrain, start_bottom)\n        end_excavation = difference(end_terrain, end_bottom)\n\n        average_excavation = average(\n            start_excavation,\n            end_excavation\n        )\n\n        # ---------------------------\n        # Estructuras conectadas\n        # ---------------------------\n        start_name, start_style, start_type = structure_info(\n            start_structures[index],\n            transaction\n        )\n\n        end_name, end_style, end_type = structure_info(\n            end_structures[index],\n            transaction\n        )\n\n        # ---------------------------\n        # Fila de salida\n        # ---------------------------\n        rows.append([\n            pipe_name,\n            part_size,\n            length_2d,\n            slope,\n\n            start_terrain,\n            start_bottom,\n            start_excavation,\n\n            end_terrain,\n            end_bottom,\n            end_excavation,\n\n            average_excavation,\n\n            start_name,\n            start_style,\n            start_type,\n            depth_range(start_excavation),\n\n            end_name,\n            end_style,\n            end_type,\n            depth_range(end_excavation),\n        ])\n\nfinally:\n    # La transacción es solo de lectura; no se requiere Commit().\n    transaction.Dispose()\n\n\n# ---------------------------------------------------------------------------\n# 5. SALIDA HACIA DYNAMO\n# ---------------------------------------------------------------------------\n\nOUT = rows\n",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "0d553105710c4f4286707d9bc397148c",
+      "NodeType": "PythonScriptNode",
+      "Inputs": [
+        {
+          "Id": "d5b75c200fcf4223ac7ae1ff0611f944",
+          "Name": "a",
+          "Description": "a",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2e37439a7f724ebdb3853aae25284922",
+          "Name": "c",
+          "Description": "c",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d871dc6090324283bcaa397ee1db67d0",
+          "Name": "e",
+          "Description": "e",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "10d88be0c8204eee82026e0d3a49a80d",
+          "Name": "g",
+          "Description": "g",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "aa1357cacebc442580b6481c00fb3199",
+          "Name": "i",
+          "Description": "i",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e841ee6929114b95848b31f9eef33d01",
+          "Name": "k",
+          "Description": "k",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "99f6a7df15d142fb8685d406447dac7e",
+          "Name": "m",
+          "Description": "m",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1229f3dc743c4edd950483c435454291",
+          "Name": "p",
+          "Description": "p",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "432062ed031d4fd49dab0fc7b6b2dbd0",
+          "Name": "r",
+          "Description": "r",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5c9dc25bee64b1292bb27b70b8a332c",
+          "Name": "t",
+          "Description": "t",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "73a2cc265aee47d498175a56ee59f346",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f59cca2c42704469acb63fc607944e0a",
+          "Name": "",
+          "Description": "buzonFinal",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dfebc75ee9944081a8c313ee26b8e683",
+          "Name": "",
+          "Description": "exp",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded Python script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b7b3d95dce8c429f80fad26209c4aa61",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "8cc831efed3945d1b77337f90f39d4d3",
+          "Name": "filePath",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "302d75d9729e430590c44758c889f67f",
+          "Name": "sheetName",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "659051ad18634dd0bb97e01a618fd26b",
+          "Name": "startRow",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b2198fcb64af4acf82647dde7041f456",
+          "Name": "startColumn",
+          "Description": "int",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5084eb01a7ce4d3ca7b188d2489703f8",
+          "Name": "data",
+          "Description": "var[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "477b61cb75fa4ddebaf1161793002dc7",
+          "Name": "overWrite",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a8d8b4c5c17f4fc7869a0f65896e4f16",
+          "Name": "writeAsString",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a2e382f83bca4b3295eef0666dc97ab0",
+          "Name": "var[][]",
+          "Description": "var[][]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSOffice.Data.ExportToExcel@string,string,int,int,var[][],bool,bool",
+      "Replication": "Auto",
+      "Description": "Data.ExportToExcel (filePath: string, sheetName: string, startRow: int, startColumn: int, data: var[][], overWrite: bool = false, writeAsString: bool = false): var[][]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "a8bfa55195524356a5b4067a85357411",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "c66be61a2dd940bda427bfe873e6b45c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "193e9350ef8c476c8709b4f05d2ddfc3",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "76a61708344b42aba6a2dcf1f449f5de",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"REPORTE\";\n0;\n0;"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "bcf0e0f2c2a347a4afb93e640b02cc16",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ffb5bb6ad7ad471bb0661574b117d375",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path",
+      "HintPath": "C:\\Users\\Carlos Granda\\OneDrive\\Documentos\\CAGP\\MAESTRIA UCSUR\\CICLO III\\1. IA Y ANALISIS DE DATOS\\EC2\\REPORTE_TUBERIAS_EC2_v2.xlsx",
+      "InputValue": "..\\OneDrive\\Documentos\\CAGP\\MAESTRIA UCSUR\\CICLO III\\1. IA Y ANALISIS DE DATOS\\EC2\\REPORTE_TUBERIAS_EC2_v2.xlsx"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "ba7653fe505e4246b122024a03bdd994",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "96b2b965e7f5446f98371f4add1f87ec",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "[\"Nom_tub\",\"Dia_altubox\",\"Longitud_detub2d\",\"pendiente\",\"Cota_ini_terreno\",\"COTA_inicio_fondo_tuberia\",\"Excavacion_inicio\",\"Cota_fin_terreno\",\"COTA_final_fondo_tuberia\",\"Excavacion_final\",\"Excavacion_promedio\",\"Buzon_inicio\",\"Estilo_etiqueta_inicio\",\"Tipo_buzon_inicio\",\"Rango_altura_inicio\",\"Buzon_final\",\"Estilo_etiqueta_final\",\"Tipo_buzon_final\",\"Rango_altura_final\"];"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "7865422eef4443c28266af873efff746",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "39f6dee1a1de4a589be62e134eaa00ee",
+          "Name": "item",
+          "Description": "Item to be added. Item could be an object or a list.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9bc3e2636b184d07b01807bf3d589b82",
+          "Name": "list",
+          "Description": "List to add on to.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "12de855e8d1d464685c0748fb9fbf13b",
+          "Name": "list",
+          "Description": "List with added items",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.List.AddItemToFront@var[]..[],var[]..[]",
+      "Replication": "Auto",
+      "Description": "Adds an item to the beginning of a list.\n\nList.AddItemToFront (item: var[]..[], list: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "39d88302b2ec4eb288f2cb07068fc982",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "25da269b6fbd4c459e67808ac4b80d6f",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "27dc36caa69b4bdda8e1cca86957a4ff",
+          "Name": "Length 2D",
+          "Description": "Actual two-dimensional length of the pipe, measured from the start of the pipe to the end of the pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f8e6968b16a34659b0f3c87a9b9d2428",
+          "Name": "Length 2D Center to Center",
+          "Description": "Two-dimensional length of the pipe, measured from the insertion point of its start structure to the insertion point of its end structure",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f7cacf8323b34db1b68e84c3f8ba041e",
+          "Name": "Length 2D To Inside Edge",
+          "Description": "Two-dimensional length of the pipe, measured from the inside edge of its start structure to the inside edge of its end structure",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d99dd039446d4dd1aa0fa0f7f19f68f0",
+          "Name": "Length 3D",
+          "Description": "Actual three-dimensional length of the pipe, measured from the start of the pipe to the end of the pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "06f901c771434af79385a6cde07e9ee4",
+          "Name": "Length 3D Center to Center",
+          "Description": "Three-dimensional length of the pipe, measured from the insertion point of its start structure to the insertion point of its end structure",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "40e66e4e525f4924b0530dd8f29da43c",
+          "Name": "Length 3D To Inside Edge",
+          "Description": "Three-dimensional length of the pipe, measured from the inside edge of its start structure to the inside edge of its end structure",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.Length",
+      "Replication": "Auto",
+      "Description": "Returns the length of a pipe\n\nPipe.Length ( ): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "1e15c20b822e4a4b8eb434c696f3a8e3",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "35a77a03cfb54a1ea4538262f87f2e42",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"/\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "df82b9120cec42f093e59ed1c9d5ace5",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "989bc36065fa4cee8d085bbd01977f83",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7a005a73c9334859b3ebbb9fbd673bfd",
+          "Name": "double",
+          "Description": "Slope of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.Slope",
+      "Replication": "Auto",
+      "Description": "Returns the absolute value of the slope of a pipe\n\nPipe.Slope: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "ada7f8749abc4157888ee2e301db763a",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f879b93228a34ac09baa98a1cd07a2c9",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"/\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "ca2d79c17ceb44dd932a2081299d50ac",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "33d31a57a6b74528a1cc59dcb185c37b",
+          "Name": "name",
+          "Description": "Name of the surface\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d451830f1e6c44378c214f6e7b31b959",
+          "Name": "document",
+          "Description": "Document\n\nDocument",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cf57826bcd104a4fb64fd2ff3dd7dc18",
+          "Name": "Surface",
+          "Description": "Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Selection.SurfaceByName@string,Autodesk.AutoCAD.DynamoNodes.Document",
+      "Replication": "Auto",
+      "Description": "Returns the surface with the given name in a document\n\nSelection.SurfaceByName (name: string, document: Document): Surface"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "627e141fe2814db6b45172a2c8ae155d",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d30c13f3ddf44b209af6011a656700e7",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"XML_PAQUETE 33_TN\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "1f92898e96aa4a5e86025ec49a2f6603",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0be0af40b91f40eaba926b70636c1e60",
+          "Name": "name",
+          "Description": "Name of the pipe network\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e06def857b74a44a1c13e1f1aa542a0",
+          "Name": "document",
+          "Description": "Document containing the pipe network. By default, the current document will be used.\n\nDocument\nDefault value : null",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d3ed443251764701bcd88096ed37e347",
+          "Name": "PipeNetwork",
+          "Description": "Pipe network",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.PipeNetwork.GetPipeNetworkByName@string,Autodesk.AutoCAD.DynamoNodes.Document",
+      "Replication": "Auto",
+      "Description": "Returns the pipe network with the given name in a document\n\nPipeNetwork.GetPipeNetworkByName (name: string, document: Document = null): PipeNetwork"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "624691dd5e3f4159b8c4b1be3058cc87",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "d4b40805a6a94e81981d6bcf95bc1f17",
+          "Name": "pipeNetwork",
+          "Description": "Autodesk.Civil.DynamoNodes.PipeNetwork",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "67eee730072d4c87bbba84cce386c01d",
+          "Name": "Pipe[]",
+          "Description": "Pipes in pipe network",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.PipeNetwork.Pipes",
+      "Replication": "Auto",
+      "Description": "Returns all pipes in a pipe network\n\nPipeNetwork.Pipes: Pipe[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "936bb039ec71443989e0da324dc40499",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "2efd1309c9e74921a88c2508a6df88bc",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "64cbdb69b51a41d8bb5c50b3aab67873",
+          "Name": "Point",
+          "Description": "Start point of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.StartPoint",
+      "Replication": "Auto",
+      "Description": "Returns the start point of the centerline of a pipe\n\nPipe.StartPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "5d0e9d1d494545c58d6ad2e0de862fb4",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "6eb3edb97ce44f629333a7dfeb5a3301",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5653c78dcaca4409bbd66a358afd14cd",
+          "Name": "Point",
+          "Description": "End point of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.EndPoint",
+      "Replication": "Auto",
+      "Description": "Returns the end point of the centerline of a pipe\n\nPipe.EndPoint: Point"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "79de1da13beb486bb28f44fb888d14d8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0ae4ec8d4c9c44108cc4c1d2d5151499",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d366cccfe4424622bb21081af7819d72",
+          "Name": "double",
+          "Description": "Wall thickness of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.WallThickness",
+      "Replication": "Auto",
+      "Description": "Returns the wall thickness of a pipe\n\nPipe.WallThickness: double"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "Id": "d12fb30505014b29ae3c85826ce0af35",
+      "NodeType": "BooleanInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fe22602d85a94e709f066144f1aa304e",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Enables selection between True and False",
+      "InputValue": false
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f02ea50aab31474da20c93987e1f3826",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "b9c123fcd33548d59eb9534baa263d93",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "e6d40c715b2243cfb795943dc94b34e1",
+          "Name": "double",
+          "Description": "Inner height of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.InnerHeight",
+      "Replication": "Auto",
+      "Description": "Returns the inner height of a non-circular pipe\n\nPipe.InnerHeight: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "f4daf5af0abe4639976f5380fe0f8789",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "b7334dfbe87343679444f758c59f7942",
+          "Name": "A1",
+          "Description": "A1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7c1ce2f5301b40f69aa0a1462dc0ef29",
+          "Name": "A2",
+          "Description": "A2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7815bda99d424407959b05697f4e3d17",
+          "Name": "",
+          "Description": "diametro_comrcial",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "diametro_comrcial=0.5*A1+A2;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c56b7179a7e848ccb1f12efdffab2323",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "481357ada4284dadaea6da2ca090962a",
+          "Name": "surface",
+          "Description": "Autodesk.Civil.DynamoNodes.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8fcbf343634249b3bfc556e4638aff8a",
+          "Name": "x",
+          "Description": "X coordinate within the extents of the surface\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9e4bc311dd8a40408d4389cf04ea8378",
+          "Name": "y",
+          "Description": "Y coordinate within the extents of the surface\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "05d937e2d3184859b598d86ee6808100",
+          "Name": "double",
+          "Description": "Elevation of surface at given coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Surface.ElevationAtXY@double,double",
+      "Replication": "Auto",
+      "Description": "Returns the elevation of a surface at the given coordinates\n\nSurface.ElevationAtXY (x: double, y: double): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "e3b280d02d2f4ca6a3c83e12f28c2ada",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "5d2c6b04f7d3444682d3119a2fdb266f",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8e3b16df4846411fa1ed34ed48168976",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.X",
+      "Replication": "Auto",
+      "Description": "Get the X component of a Point\n\nPoint.X: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "b6ba1f7b2f8b49dd9b93fe5696cd44a8",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "fd75ad775d98409cb9f7f38b80b4788d",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2951d10369554b998b1c00c6d95452f9",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Y",
+      "Replication": "Auto",
+      "Description": "Get the Y component of a Point\n\nPoint.Y: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6d27f840ef09472586583434a1095d85",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "353219a1034e4ff59f64baef99d8c935",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "37cdf442b6ed4460a14ee91c82b36424",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.X",
+      "Replication": "Auto",
+      "Description": "Get the X component of a Point\n\nPoint.X: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "f748e7675e054d02a25c0b0cb3a04925",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "f9268753c2b64674af054b864648ff3e",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "11a0a2b9a5ef4a289385ccb1edfa1080",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Y",
+      "Replication": "Auto",
+      "Description": "Get the Y component of a Point\n\nPoint.Y: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "4b304ed23003451da50947089d373792",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "733b076f15f642129f3d187ba813e6c4",
+          "Name": "surface",
+          "Description": "Autodesk.Civil.DynamoNodes.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f6d5de4ea3524ba280035aa41b4437bc",
+          "Name": "x",
+          "Description": "X coordinate within the extents of the surface\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "730b9296ad584bd7ad6fc541c59d3e0a",
+          "Name": "y",
+          "Description": "Y coordinate within the extents of the surface\n\ndouble",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a62f95a3bd0f41efa7fa801fc1bcc4a5",
+          "Name": "double",
+          "Description": "Elevation of surface at given coordinates",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Surface.ElevationAtXY@double,double",
+      "Replication": "Auto",
+      "Description": "Returns the elevation of a surface at the given coordinates\n\nSurface.ElevationAtXY (x: double, y: double): double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8ec77f0d70fe46928e07e06cd7579f80",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "34461a62571147eea347ff7308da6395",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bc15dbd950114e7fb351164f58ea6fe2",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Z",
+      "Replication": "Auto",
+      "Description": "Get the Z component of a Point\n\nPoint.Z: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "6f39c8bf7720456892a128a55f3f6410",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "9de68123a58a4759af2e66d0c08865b0",
+          "Name": "point",
+          "Description": "Autodesk.DesignScript.Geometry.Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8a1b27cfd65d49a3b49f38d30f350b25",
+          "Name": "double",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Point.Z",
+      "Replication": "Auto",
+      "Description": "Get the Z component of a Point\n\nPoint.Z: double"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "e57174f1ae914623829b99152e3326e5",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "bc6ee1cf6cf24063a7764145f159f2dc",
+          "Name": "B1",
+          "Description": "B1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "eb2efa64a8b04acfad84e390b49480c7",
+          "Name": "B2",
+          "Description": "B2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "563fc8a0263847b881083d00a607822f",
+          "Name": "",
+          "Description": "F_INICIO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "F_INICIO=B1-B2;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "9ffa99d600174ca0a84d2f177fc38c82",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [
+        {
+          "Id": "12635f3469df4f13bc9e000a14ad072c",
+          "Name": "B1",
+          "Description": "B1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dd3ee11f882546c8baf7acad4b1fc4c2",
+          "Name": "B2",
+          "Description": "B2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4d732bb98d234a6e8d1e456127127a58",
+          "Name": "",
+          "Description": "F_INICIO",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "F_INICIO=B1-B2;"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "Id": "90af12f3d5a1457abacdf0283b48eb35",
+      "NodeType": "CodeBlockNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f27b6fc4f1fa4f1b85702bfb17cf11ee",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a7c985c4103545a6aaad00695afa391d",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "69b3fb6b4cbd4b0c80c08de8a828195a",
+          "Name": "",
+          "Description": "Value of expression at line 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c22a35ece567477d8254be448cecef8b",
+          "Name": "",
+          "Description": "Value of expression at line 4",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c5f6078e14ca420c879ad23e95841889",
+          "Name": "",
+          "Description": "Value of expression at line 5",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "75ca3d5f9f4545b2ad8295d07585da7f",
+          "Name": "",
+          "Description": "Value of expression at line 6",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly",
+      "Code": "\"/\";\n\"/\";\n\"/\";\n\"/\";\n\"/\";\n\"/\";"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "c58e8fd4442b42029ec1c3ea2aa13cca",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "ff6d3411a61248dea53c7718593e06f1",
+          "Name": "part",
+          "Description": "Autodesk.Civil.DynamoNodes.Part",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "efaa6c4a6fc94af694dc121d85718617",
+          "Name": "string",
+          "Description": "Name of part size",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Part.PartSize",
+      "Replication": "Auto",
+      "Description": "Returns the name of the size of a part\n\nPart.PartSize: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "a1ddf5b3a61440d4a7babdcefbf6bebb",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "1750c31d16b74698ae18c330e5af9b20",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "215aa16159104277acc36a65870c5e91",
+          "Name": "Structure",
+          "Description": "Start structure of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.StartStructure",
+      "Replication": "Auto",
+      "Description": "Returns the start structure of a pipe\n\nPipe.StartStructure: Structure"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "2fe39fe576c8487ab395e3d7c55e5dff",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "38229f945e5f4ec594faebc00016c3eb",
+          "Name": "pipe",
+          "Description": "Autodesk.Civil.DynamoNodes.Pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d2880a94f7f849dd9a1efdbb16b08ecd",
+          "Name": "Structure",
+          "Description": "End structure of pipe",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "Autodesk.Civil.DynamoNodes.Pipe.EndStructure",
+      "Replication": "Auto",
+      "Description": "Returns the end structure of a pipe\n\nPipe.EndStructure: Structure"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "Id": "1a4e76c702304f91a30b44e7846a3f0b",
+      "NodeType": "BooleanInputNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ccad8e1098304c3b8ad7cdb26a7aa58b",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Enables selection between True and False",
+      "InputValue": true
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "39d97d0a025749d6a1c4e39c3722920a",
+      "End": "6bac0642846e4aed9b7a481acd055d41",
+      "Id": "280b314ff0a641b589dc9d69f322177d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a9f7ac47daae45989f0d2df12257305a",
+      "End": "6a5e6f0145984fb09b88afe8e1f5deb9",
+      "Id": "554901aada4e4ec99da76b1b66a77b7c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a9f7ac47daae45989f0d2df12257305a",
+      "End": "d451830f1e6c44378c214f6e7b31b959",
+      "Id": "44f15719fd25425c905197dc58f96936",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a9f7ac47daae45989f0d2df12257305a",
+      "End": "1e06def857b74a44a1c13e1f1aa542a0",
+      "Id": "ad78549f0fcd44ae98f9fb1b5bcbb3c3",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fb398ab7f8524c00b1cf46e83ed70e49",
+      "End": "3f11b9755f40468d9be7c3bf507a33ca",
+      "Id": "55538e8e100d46ff82e7fdb93688c3fa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fb398ab7f8524c00b1cf46e83ed70e49",
+      "End": "0be0af40b91f40eaba926b70636c1e60",
+      "Id": "77d0976c04764b92b2d3be8e929a9fdb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6cbfa671cd6044cebadc9e920d5bfc97",
+      "End": "3a986d63e4b8437386a880f0f460054a",
+      "Id": "d21bb9b218dc4fb1b1ee5719b8d36107",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6cbfa671cd6044cebadc9e920d5bfc97",
+      "End": "25da269b6fbd4c459e67808ac4b80d6f",
+      "Id": "6e1594cd0b874ff69d75aa0f010fbc90",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6cbfa671cd6044cebadc9e920d5bfc97",
+      "End": "989bc36065fa4cee8d085bbd01977f83",
+      "Id": "0c7e0aac8b46491ca9275c1571cedf1e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "6cbfa671cd6044cebadc9e920d5bfc97",
+      "End": "ff6d3411a61248dea53c7718593e06f1",
+      "Id": "8ce62e029dfe402b8cf4f3a5e110e134",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67b13e8734424ea8b30d8b472a7e2536",
+      "End": "d5b75c200fcf4223ac7ae1ff0611f944",
+      "Id": "9b76d9bc7f8a412884ae0b166378fe1d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "73a2cc265aee47d498175a56ee59f346",
+      "End": "9bc3e2636b184d07b01807bf3d589b82",
+      "Id": "12cffa2597ad4ca1b37dc584065bdb23",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "c66be61a2dd940bda427bfe873e6b45c",
+      "End": "302d75d9729e430590c44758c889f67f",
+      "Id": "dcf1f534259f4297a8a26012d90a0340",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "193e9350ef8c476c8709b4f05d2ddfc3",
+      "End": "659051ad18634dd0bb97e01a618fd26b",
+      "Id": "b8a0dceaa25847628b6fe37f94943d86",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "76a61708344b42aba6a2dcf1f449f5de",
+      "End": "b2198fcb64af4acf82647dde7041f456",
+      "Id": "a0cd2d492093458a8bd200a23006787a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ffb5bb6ad7ad471bb0661574b117d375",
+      "End": "8cc831efed3945d1b77337f90f39d4d3",
+      "Id": "a03862f0bc28473791f28c74d92b0119",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "96b2b965e7f5446f98371f4add1f87ec",
+      "End": "39f6dee1a1de4a589be62e134eaa00ee",
+      "Id": "8850794763aa4d57b3c9db071d9f3271",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "12de855e8d1d464685c0748fb9fbf13b",
+      "End": "5084eb01a7ce4d3ca7b188d2489703f8",
+      "Id": "f865b49486e34a52b0638d88b01fd9db",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "f7cacf8323b34db1b68e84c3f8ba041e",
+      "End": "d871dc6090324283bcaa397ee1db67d0",
+      "Id": "193427b97c1a4f30a69228a5b094bff9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7a005a73c9334859b3ebbb9fbd673bfd",
+      "End": "10d88be0c8204eee82026e0d3a49a80d",
+      "Id": "00b4497aedf742aa86137e016106af60",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cf57826bcd104a4fb64fd2ff3dd7dc18",
+      "End": "481357ada4284dadaea6da2ca090962a",
+      "Id": "76016bca3f59459f93a276711098b70e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "cf57826bcd104a4fb64fd2ff3dd7dc18",
+      "End": "733b076f15f642129f3d187ba813e6c4",
+      "Id": "7c048eaa4abc4a79ad5b6f86655172fb",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d30c13f3ddf44b209af6011a656700e7",
+      "End": "33d31a57a6b74528a1cc59dcb185c37b",
+      "Id": "142a0aa428584bfd9558d9d55c730705",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d3ed443251764701bcd88096ed37e347",
+      "End": "d4b40805a6a94e81981d6bcf95bc1f17",
+      "Id": "dce73ec05c7f449193319401c8c36d0c",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "2efd1309c9e74921a88c2508a6df88bc",
+      "Id": "15ec40b8710a41f5bbc5f4f124c5c044",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "6eb3edb97ce44f629333a7dfeb5a3301",
+      "Id": "3c260d09b76843d0bfcb8e859a0d5bdc",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "0ae4ec8d4c9c44108cc4c1d2d5151499",
+      "Id": "9d834abdf0624f8ea3fe406fb2ef78ae",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "b9c123fcd33548d59eb9534baa263d93",
+      "Id": "b655225dabf24235ac604998859c9ce2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "1750c31d16b74698ae18c330e5af9b20",
+      "Id": "f9d4d28cb66d45a181389ae7333406ce",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "67eee730072d4c87bbba84cce386c01d",
+      "End": "38229f945e5f4ec594faebc00016c3eb",
+      "Id": "19141ae2b0bc452aa4219d89ff583c3a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "64cbdb69b51a41d8bb5c50b3aab67873",
+      "End": "5d2c6b04f7d3444682d3119a2fdb266f",
+      "Id": "254ba992ed89423ab608a450cac124e1",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "64cbdb69b51a41d8bb5c50b3aab67873",
+      "End": "fd75ad775d98409cb9f7f38b80b4788d",
+      "Id": "29fd4a5cf8434e6f887feffb713f511a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "64cbdb69b51a41d8bb5c50b3aab67873",
+      "End": "34461a62571147eea347ff7308da6395",
+      "Id": "bdb28ca21cd74e849200d890e309903d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5653c78dcaca4409bbd66a358afd14cd",
+      "End": "353219a1034e4ff59f64baef99d8c935",
+      "Id": "29f006b244504b4dad3a725d96c284c4",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5653c78dcaca4409bbd66a358afd14cd",
+      "End": "f9268753c2b64674af054b864648ff3e",
+      "Id": "dd9f5029296645e6a4069aca76eee525",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "5653c78dcaca4409bbd66a358afd14cd",
+      "End": "9de68123a58a4759af2e66d0c08865b0",
+      "Id": "9ecafa0091824ae5aa861e060642a620",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d366cccfe4424622bb21081af7819d72",
+      "End": "7c1ce2f5301b40f69aa0a1462dc0ef29",
+      "Id": "ecf397cc498d4d828ce8bae79ac27ac2",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "fe22602d85a94e709f066144f1aa304e",
+      "End": "a8d8b4c5c17f4fc7869a0f65896e4f16",
+      "Id": "d1d6eab62556414b85e79379b9d492a0",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "e6d40c715b2243cfb795943dc94b34e1",
+      "End": "b7334dfbe87343679444f758c59f7942",
+      "Id": "fa222a86c7934b708399ad6ed06ab731",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7815bda99d424407959b05697f4e3d17",
+      "End": "eb2efa64a8b04acfad84e390b49480c7",
+      "Id": "d1f5c89ed7794a2b99dc142352a6b681",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7815bda99d424407959b05697f4e3d17",
+      "End": "dd3ee11f882546c8baf7acad4b1fc4c2",
+      "Id": "147a8bb3a32840d198cbee3418c8f7fa",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "05d937e2d3184859b598d86ee6808100",
+      "End": "aa1357cacebc442580b6481c00fb3199",
+      "Id": "4377c720e0bc444e9eadf8098228bb9e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8e3b16df4846411fa1ed34ed48168976",
+      "End": "8fcbf343634249b3bfc556e4638aff8a",
+      "Id": "20e8f548943d4c1eac7242792710c8a9",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "2951d10369554b998b1c00c6d95452f9",
+      "End": "9e4bc311dd8a40408d4389cf04ea8378",
+      "Id": "dff8271e1c8e431ebbe574db155f521d",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "37cdf442b6ed4460a14ee91c82b36424",
+      "End": "f6d5de4ea3524ba280035aa41b4437bc",
+      "Id": "ed5b00da18234164bba3e435c55fcc3b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "11a0a2b9a5ef4a289385ccb1edfa1080",
+      "End": "730b9296ad584bd7ad6fc541c59d3e0a",
+      "Id": "c5f99838056a4c129c924ebcca0e4067",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a62f95a3bd0f41efa7fa801fc1bcc4a5",
+      "End": "99f6a7df15d142fb8685d406447dac7e",
+      "Id": "16713b377d6444b89487b1e37948da39",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "bc15dbd950114e7fb351164f58ea6fe2",
+      "End": "bc6ee1cf6cf24063a7764145f159f2dc",
+      "Id": "3492d891055b4f48bc485c081e6dbc7b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "8a1b27cfd65d49a3b49f38d30f350b25",
+      "End": "12635f3469df4f13bc9e000a14ad072c",
+      "Id": "a743b115b84c4798b96ad0598097160a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "563fc8a0263847b881083d00a607822f",
+      "End": "e841ee6929114b95848b31f9eef33d01",
+      "Id": "791fc705aa7347da816dff35716b997e",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "4d732bb98d234a6e8d1e456127127a58",
+      "End": "1229f3dc743c4edd950483c435454291",
+      "Id": "8a37cf29b7d6485099f2706debb5c584",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "efaa6c4a6fc94af694dc121d85718617",
+      "End": "2e37439a7f724ebdb3853aae25284922",
+      "Id": "f1b00a0c61ef4a93890cd56e09a5a1ca",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "215aa16159104277acc36a65870c5e91",
+      "End": "432062ed031d4fd49dab0fc7b6b2dbd0",
+      "Id": "27bfdcf609284ea8b83e2ce0cb7ba8dc",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "d2880a94f7f849dd9a1efdbb16b08ecd",
+      "End": "e5c9dc25bee64b1292bb27b70b8a332c",
+      "Id": "737f206e826f4d6b8a238755c4b5866b",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ccad8e1098304c3b8ad7cdb26a7aa58b",
+      "End": "477b61cb75fa4ddebaf1161793002dc7",
+      "Id": "81b16347292a4464839acc7159456535",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "REPORTE_TUBERIAS_EC2_v2.xlsx",
+      "ReferenceType": "External",
+      "Nodes": [
+        "bcf0e0f2c2a347a4afb93e640b02cc16"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.3",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "136351ce-4d50-467d-a61f-a63b0c76975e",
+      "Binding": {
+        "GetPipeNetworkByName_InClassDecl-1_InFunctionScope-1_Instance0_136351ce-4d50-467d-a61f-a63b0c76975e": "H4sIAAAAAAAACouuVkpJLElUslIyNzC0VKqNBQCFADTkEQAAAA=="
+      }
+    },
+    {
+      "NodeId": "5c3eed3b-84b9-433d-b7ae-ced60f85ee4d",
+      "Binding": {
+        "get_Pipes_InClassDecl-1_InFunctionScope-1_Instance0_5c3eed3b-84b9-433d-b7ae-ced60f85ee4d": "H4sIAAAAAAAACouuVkpJLElUslIyNHB1sjRVqo0FAKs5g5QTAAAA"
+      }
+    },
+    {
+      "NodeId": "ca2d79c1-7ceb-44dd-932a-2081299d50ac",
+      "Binding": {
+        "SurfaceByName_InClassDecl-1_InFunctionScope-1_Instance0_ca2d79c1-7ceb-44dd-932a-2081299d50ac": "H4sIAAAAAAAACouuVkpJLElUslIyNDB1M3JWqo0FAMdl/toTAAAA"
+      }
+    },
+    {
+      "NodeId": "1f92898e-96aa-4a5e-8602-5ec49a2f6603",
+      "Binding": {
+        "GetPipeNetworkByName_InClassDecl-1_InFunctionScope-1_Instance0_1f92898e-96aa-4a5e-8602-5ec49a2f6603": "H4sIAAAAAAAACouuVkpJLElUslIyNzC0VKqNBQCFADTkEQAAAA=="
+      }
+    },
+    {
+      "NodeId": "624691dd-5e3f-4159-b8c4-b1be3058cc87",
+      "Binding": {
+        "get_Pipes_InClassDecl-1_InFunctionScope-1_Instance0_624691dd-5e3f-4159-b8c4-b1be3058cc87": "H4sIAAAAAAAACouuVkpJLElUslIyNHB1sjRVqo0FAKs5g5QTAAAA"
+      }
+    },
+    {
+      "NodeId": "a1ddf5b3-a614-40d4-a7ba-bdcefbf6bebb",
+      "Binding": {
+        "get_StartStructure_InClassDecl-1_InFunctionScope-1_Instance0_a1ddf5b3-a614-40d4-a7ba-bdcefbf6bebb": "H4sIAAAAAAAACpVUu27DQAz7l5s7+BHbp26UfPmJIEOAZO3SbIb/vYBd2CbTFijgIVR0lESe7jKlj8fn83Efb89ber9M6b78SAPOOc1v0/Hb/vOqSYyDcYPvs3uoPXFKW3b6PdoJcbcQU6jvOeWUGQ+VYDDO0kgujE34moXvGEJpKQVlFMyUyJ1gHgF5EMwtwFgVGMsNCJ9IhNEYi12oJX8d+YBZQoiXWL3csTtjsQjiMl5dtmCJLVhiG1kyE8ltvb2HkaVkiCVxfmmh8BQGpjRnSnNp2Vklcy5pzqqby0gu9UwkcPt9QbH0wqGl3f9++3lpx0NWdXXsL4ZS8wkROPRVKfKqiMcuHrusoRnl13WuK63IFUIWIbbd/3GgkHsc2z2maM++hmxngO9JGG9bGG9jyOsRgwwxSFfge+dSz3VoDGm+ztcvmmkUwhsGAAA="
+      }
+    },
+    {
+      "NodeId": "2fe39fe5-76c8-487a-b395-e3d7c55e5dff",
+      "Binding": {
+        "get_EndStructure_InClassDecl-1_InFunctionScope-1_Instance0_2fe39fe5-76c8-487a-b395-e3d7c55e5dff": "H4sIAAAAAAAACrVSuw6DMAz8l8wdEqAkdAsh/QnEgARrl7Ih/r0qKXV8BNSlUpazHT/urp3FY3xO49D0Uy9u7bxc6IlhDQpdy0wwbAuOVSkSvzJJ0X3aXR1vEnDyRT0t+2R9A9jzpsb/kv/Ho5l3czYD+SKCJCfIBZYJQ30d6qOQUkbJmg2n6mLbKlJklZmLAsqX5YFoFMqB4q8NohLwT8DpPSsDim21FNL7CXr1Cadzu+7A4yn7CbI8XIVGCiIfGgsb4XIV97WrwAsGtNfgDc11sj4/7fe5lvIWdH1v2S3dC1ydIkogBAAA"
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.3.2.11986",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "136351ce4d50467da61fa63b0c76975e",
+        "Name": "PipeNetwork.GetPipeNetworkByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1845.2182660906556,
+        "Y": 813.8348817071007
+      },
+      {
+        "Id": "f7bb3906ea594408aab8725b8fc248ea",
+        "Name": "Document.Current",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1792.8971859070484,
+        "Y": 1052.4597888984533
+      },
+      {
+        "Id": "aa284ab6c3ad49d0be1b263b8e30f3b7",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2527.1914773488497,
+        "Y": 214.2290699680094
+      },
+      {
+        "Id": "5c3eed3b84b9433db7aeced60f85ee4d",
+        "Name": "PipeNetwork.Pipes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1816.1227258442345,
+        "Y": 613.0999914435146
+      },
+      {
+        "Id": "9018ea4909d245ce88f341412ac48ddb",
+        "Name": "CivilObject.Name",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -177.59080428024583,
+        "Y": -604.3678540372529
+      },
+      {
+        "Id": "372f402a51a8443a9e7621e99da683ac",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -72.81087166795066,
+        "Y": -429.2652955651522
+      },
+      {
+        "Id": "0d553105710c4f4286707d9bc397148c",
+        "Name": "Python Script",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2804.30378617869,
+        "Y": -692.1780251877519
+      },
+      {
+        "Id": "b7b3d95dce8c429f80fad26209c4aa61",
+        "Name": "Data.ExportToExcel",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3950.478009949126,
+        "Y": -856.059038960499
+      },
+      {
+        "Id": "a8bfa55195524356a5b4067a85357411",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2571.8047260995586,
+        "Y": -243.31680941889925
+      },
+      {
+        "Id": "bcf0e0f2c2a347a4afb93e640b02cc16",
+        "Name": "File Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -3025.7418657991325,
+        "Y": -436.6818775310755
+      },
+      {
+        "Id": "ba7653fe505e4246b122024a03bdd994",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2344.2031870384535,
+        "Y": -951.6359607446923
+      },
+      {
+        "Id": "7865422eef4443c28266af873efff746",
+        "Name": "List.AddItemToFront",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3128.4055174731648,
+        "Y": -941.5427672782637
+      },
+      {
+        "Id": "39d88302b2ec4eb288f2cb07068fc982",
+        "Name": "Pipe.Length",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1100.0631379565075,
+        "Y": 411.79958426180616
+      },
+      {
+        "Id": "1e15c20b822e4a4b8eb434c696f3a8e3",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 31.332437020716497,
+        "Y": -235.9668631865492
+      },
+      {
+        "Id": "df82b9120cec42f093e59ed1c9d5ace5",
+        "Name": "Pipe.Slope",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1084.6637794214075,
+        "Y": 745.0552155200057
+      },
+      {
+        "Id": "ada7f8749abc4157888ee2e301db763a",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 323.496572312672,
+        "Y": -303.4934812498395
+      },
+      {
+        "Id": "ca2d79c17ceb44dd932a2081299d50ac",
+        "Name": "Selection.SurfaceByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -383.1931971205396,
+        "Y": 448.1855826594574
+      },
+      {
+        "Id": "627e141fe2814db6b45172a2c8ae155d",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -2558.4268892053296,
+        "Y": -39.876335711192326
+      },
+      {
+        "Id": "1f92898e96aa4a5e86025ec49a2f6603",
+        "Name": "PipeNetwork.GetPipeNetworkByName",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1370.3409107219409,
+        "Y": 953.7852333455016
+      },
+      {
+        "Id": "624691dd5e3f4159b8c4b1be3058cc87",
+        "Name": "PipeNetwork.Pipes",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -414.3423025234937,
+        "Y": 982.67097648656
+      },
+      {
+        "Id": "936bb039ec71443989e0da324dc40499",
+        "Name": "Pipe.StartPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 285.85039197083006,
+        "Y": 426.1338573541798
+      },
+      {
+        "Id": "5d0e9d1d494545c58d6ad2e0de862fb4",
+        "Name": "Pipe.EndPoint",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -336.5040624587117,
+        "Y": 667.9102624364988
+      },
+      {
+        "Id": "79de1da13beb486bb28f44fb888d14d8",
+        "Name": "Pipe.WallThickness",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -9.357741698064274,
+        "Y": 1204.2045539836786
+      },
+      {
+        "Id": "d12fb30505014b29ae3c85826ce0af35",
+        "Name": "Boolean",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3182.3630067974204,
+        "Y": -438.4027818842252
+      },
+      {
+        "Id": "f02ea50aab31474da20c93987e1f3826",
+        "Name": "Pipe.InnerHeight",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -12.877717203405382,
+        "Y": 1048.6828489235795
+      },
+      {
+        "Id": "f4daf5af0abe4639976f5380fe0f8789",
+        "Name": "RADIO COMERCIAL",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 625.634741270085,
+        "Y": 1105.4714057756528
+      },
+      {
+        "Id": "c56b7179a7e848ccb1f12efdffab2323",
+        "Name": "COTA TERRENO INICIO DE TUBERIA",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1094.1529343028706,
+        "Y": 37.644508742287144
+      },
+      {
+        "Id": "e3b280d02d2f4ca6a3c83e12f28c2ada",
+        "Name": "Point.X",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 621.23555358772,
+        "Y": 152.82338487655625
+      },
+      {
+        "Id": "b6ba1f7b2f8b49dd9b93fe5696cd44a8",
+        "Name": "Point.Y",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 635.0146454524679,
+        "Y": 277.7420123581637
+      },
+      {
+        "Id": "6d27f840ef09472586583434a1095d85",
+        "Name": "Point.X",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 274.2456428946823,
+        "Y": 623.7265517401211
+      },
+      {
+        "Id": "f748e7675e054d02a25c0b0cb3a04925",
+        "Name": "Point.Y",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 292.0137476284003,
+        "Y": 758.8542983362208
+      },
+      {
+        "Id": "4b304ed23003451da50947089d373792",
+        "Name": "COTA FINAL DE TUBERIA TERRENO",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 701.9197036431585,
+        "Y": 588.2706754071439
+      },
+      {
+        "Id": "8ec77f0d70fe46928e07e06cd7579f80",
+        "Name": "Point.Z",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 632.0038760283087,
+        "Y": 420.6345725854309
+      },
+      {
+        "Id": "6f39c8bf7720456892a128a55f3f6410",
+        "Name": "Point.Z",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 274.1031445678177,
+        "Y": 889.1641771727076
+      },
+      {
+        "Id": "e57174f1ae914623829b99152e3326e5",
+        "Name": "FONDO INICIO DE TUBERIA",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1104.0059625624767,
+        "Y": 309.40658874640485
+      },
+      {
+        "Id": "9ffa99d600174ca0a84d2f177fc38c82",
+        "Name": "FONDO FINAL DE TUBERIA",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1146.9400416663557,
+        "Y": 842.6243147010764
+      },
+      {
+        "Id": "90af12f3d5a1457abacdf0283b48eb35",
+        "Name": "Code Block",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 2179.715457026919,
+        "Y": -277.1893929288094
+      },
+      {
+        "Id": "c58e8fd4442b42029ec1c3ea2aa13cca",
+        "Name": "Part.PartSize",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -1022.4615824690595,
+        "Y": 246.51661536711015
+      },
+      {
+        "Id": "a1ddf5b3a61440d4a7babdcefbf6bebb",
+        "Name": "Pipe.StartStructure",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1162.42967701209,
+        "Y": 1217.454137678195
+      },
+      {
+        "Id": "2fe39fe576c8487ab395e3d7c55e5dff",
+        "Name": "Pipe.EndStructure",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -19.651751795610608,
+        "Y": 1349.225969714506
+      },
+      {
+        "Id": "1a4e76c702304f91a30b44e7846a3f0b",
+        "Name": "Boolean",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 3181.658700479917,
+        "Y": -606.8381013854132
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "4d003e8cf0594ffc8e6fa1acf4d3333b",
+        "Title": "INPUTS",
+        "DescriptionText": "Configuración de entrada de la rutina. Definir la ruta del reporte Excel y verificar los nombres de la hoja (REPORTE), superficie (XML_PAQUETE 33_TN) y red de tuberías (RED 01). Modificar estos valores según el proyecto antes de ejecutar Dynamo.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "aa284ab6c3ad49d0be1b263b8e30f3b7",
+          "a8bfa55195524356a5b4067a85357411",
+          "bcf0e0f2c2a347a4afb93e640b02cc16",
+          "627e141fe2814db6b45172a2c8ae155d"
+        ],
+        "HasNestedGroups": false,
+        "Left": -3035.7418657991325,
+        "Top": -518.6818775310755,
+        "Width": 727.9816432604694,
+        "Height": 864.5776141657516,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -436.6818775310755,
+        "InitialHeight": 795.9109474990848,
+        "TextblockHeight": 72.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6c2ff302c8b34ccda777790564fe1c80",
+        "Title": "Exportación a Excel",
+        "DescriptionText": "Organiza los resultados procesados en una matriz tabular e incorpora los encabezados correspondientes antes de su exportación.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "b7b3d95dce8c429f80fad26209c4aa61"
+        ],
+        "HasNestedGroups": false,
+        "Left": 3940.478009949126,
+        "Top": -1010.059038960499,
+        "Width": 267.3333333333335,
+        "Height": 488.33333333333326,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -856.059038960499,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 144.0,
+        "Background": "#FFFFB8D8"
+      },
+      {
+        "Id": "02d5eae8e0d54f3489b34725d574ae3e",
+        "Title": "OBTENCIÓN DE RED Y TUBERÍAS",
+        "DescriptionText": "Obtiene la Pipe Network indicada por el usuario y recopila las tuberías que la conforman, extrayendo sus propiedades básicas: nombre, dimensión, longitud y pendiente.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "136351ce4d50467da61fa63b0c76975e",
+          "f7bb3906ea594408aab8725b8fc248ea",
+          "5c3eed3b84b9433db7aeced60f85ee4d",
+          "39d88302b2ec4eb288f2cb07068fc982",
+          "df82b9120cec42f093e59ed1c9d5ace5",
+          "1f92898e96aa4a5e86025ec49a2f6603",
+          "c58e8fd4442b42029ec1c3ea2aa13cca"
+        ],
+        "HasNestedGroups": false,
+        "Left": -1855.2182660906556,
+        "Top": 173.1832820337768,
+        "Width": 1074.4884614674813,
+        "Height": 1010.9431735313433,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 246.51661536711015,
+        "InitialHeight": 950.9431735313432,
+        "TextblockHeight": 63.333333333333336,
+        "Background": "#FFBB87C6"
+      },
+      {
+        "Id": "7f216fe0191f4aecb02840a9e1a47585",
+        "Title": "GEOMETRÍA, TERRENO Y EXCAVACIÓN",
+        "DescriptionText": "Obtiene la geometría de los extremos de cada tubería, consulta las elevaciones de la superficie de terreno y calcula las cotas inferiores de la tubería necesarias para determinar la profundidad de excavación.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "ca2d79c17ceb44dd932a2081299d50ac",
+          "624691dd5e3f4159b8c4b1be3058cc87",
+          "936bb039ec71443989e0da324dc40499",
+          "5d0e9d1d494545c58d6ad2e0de862fb4",
+          "79de1da13beb486bb28f44fb888d14d8",
+          "f02ea50aab31474da20c93987e1f3826",
+          "f4daf5af0abe4639976f5380fe0f8789",
+          "c56b7179a7e848ccb1f12efdffab2323",
+          "e3b280d02d2f4ca6a3c83e12f28c2ada",
+          "b6ba1f7b2f8b49dd9b93fe5696cd44a8",
+          "6d27f840ef09472586583434a1095d85",
+          "f748e7675e054d02a25c0b0cb3a04925",
+          "4b304ed23003451da50947089d373792",
+          "8ec77f0d70fe46928e07e06cd7579f80",
+          "6f39c8bf7720456892a128a55f3f6410",
+          "e57174f1ae914623829b99152e3326e5",
+          "9ffa99d600174ca0a84d2f177fc38c82",
+          "a1ddf5b3a61440d4a7babdcefbf6bebb",
+          "2fe39fe576c8487ab395e3d7c55e5dff"
+        ],
+        "HasNestedGroups": false,
+        "Left": -424.3423025234937,
+        "Top": -35.68882459104619,
+        "Width": 1866.4952368263644,
+        "Height": 1516.5814609722188,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": 37.644508742287144,
+        "InitialHeight": 1456.5814609722188,
+        "TextblockHeight": 63.333333333333336,
+        "Background": "#FFFFC999"
+      },
+      {
+        "Id": "98ac011ff181492d99e13c41f20bac97",
+        "Title": "PYTHON + CIVIL 3D API · PROCESAMIENTO DE TUBERÍAS Y BUZONES",
+        "DescriptionText": "Procesa la información de cada tubería y consulta mediante CPython3 y la API de Civil 3D las estructuras conectadas, sus nombres y estilos de etiqueta. A partir de estas propiedades clasifica el tipo de buzón y los rangos de profundidad, generando las filas del reporte final.",
+        "IsExpanded": true,
+        "WidthAdjustment": 0.0,
+        "HeightAdjustment": 0.0,
+        "Nodes": [
+          "0d553105710c4f4286707d9bc397148c",
+          "ba7653fe505e4246b122024a03bdd994",
+          "7865422eef4443c28266af873efff746",
+          "d12fb30505014b29ae3c85826ce0af35",
+          "90af12f3d5a1457abacdf0283b48eb35",
+          "1a4e76c702304f91a30b44e7846a3f0b"
+        ],
+        "HasNestedGroups": false,
+        "Left": 2169.715457026919,
+        "Top": -1033.6359607446923,
+        "Width": 1216.6475497705014,
+        "Height": 964.1132344825495,
+        "FontSize": 36.0,
+        "GroupStyleId": "00000000-0000-0000-0000-000000000000",
+        "InitialTop": -951.6359607446923,
+        "InitialHeight": 819.4465678158829,
+        "TextblockHeight": 72.0,
+        "Background": "#FFA4E1FF"
+      }
+    ],
+    "X": 103.72197783964128,
+    "Y": 294.63016100521577,
+    "Zoom": 0.1211229492047721
+  }
+}
